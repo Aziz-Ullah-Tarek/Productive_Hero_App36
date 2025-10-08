@@ -1,10 +1,10 @@
 import "./App.css";
-
+import MainLayout from "./Layouts/MainLayout";
 
 function App() {
   return (
     <>
-     <h1>Hello</h1> 
+      <MainLayout></MainLayout>
     </>
   );
 }
