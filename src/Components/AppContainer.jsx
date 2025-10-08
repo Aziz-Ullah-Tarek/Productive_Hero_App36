@@ -15,12 +15,12 @@ const AppContainer = ({ appForHome }) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-6">
           {appForHome.map((data) => (
-            <AppCard data={data}></AppCard>
+            <AppCard key={data.id} data={data}></AppCard>
           ))}
         </div>
         <div className=" mt-10 text-center">
           <Link
-            to={""}
+            to={"/apps"}
             className="btn btn-xl text-white rounded-xl bg-linear-60 from-blue-800 to-purple-700"
           >
             Show All
