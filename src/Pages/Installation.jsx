@@ -13,10 +13,14 @@ const Installation = () => {
   const handleSort = (type) => {
     setSort(type);
     if (sort === "Low - High") {
-      const sortedCard = showInstalled.sort((a, b) => b.size - a.size);
+      const sortedCard = showInstalled.sort(
+        (a, b) => b.downloads - a.downloads
+      );
       setShowInstalled(sortedCard);
     } else {
-      const sortedCard = showInstalled.sort((a, b) => a.size - b.size);
+      const sortedCard = showInstalled.sort(
+        (a, b) => a.downloads - b.downloads
+      );
       setShowInstalled(sortedCard);
     }
   };
@@ -50,7 +54,7 @@ const Installation = () => {
                   onClick={() => handleSort("Low - High")}
                   className="btn  btn-ghost"
                 >
-                  Size : Low - High
+                  Download : Low - High
                 </button>
               </li>
               <li>
@@ -58,7 +62,7 @@ const Installation = () => {
                   onClick={() => handleSort("High - Low")}
                   className="btn btn-ghost"
                 >
-                  Size : High - Low
+                  Download : High - Low
                 </button>
               </li>
             </ul>
@@ -66,7 +70,7 @@ const Installation = () => {
         </div>
 
         {showInstalled.length > 0 ? (
-          <div className="space-y-6 py-10">
+          <div className="space-y-6 py-13">
             {showInstalled.map((installData) => (
               <InstalledCard
                 key={installData.id}

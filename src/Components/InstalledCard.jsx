@@ -25,7 +25,7 @@ const InstalledCard = ({ installData, showInstalled, setShowInstalled }) => {
   return (
     <>
       <div className="bg-white flex sm:justify-between items-center p-6 rounded-2xl shadow-md shadow-gray-300 flex-col sm:flex-row gap-4 hover:scale-105 transition duration-300">
-        <div className="flex items-center sm:gap-10 ">
+        <div className="flex items-center gap-4 sm:gap-10 ">
           <figure className="w-20">
             <img src={installData.image} alt="" />
           </figure>
@@ -34,7 +34,7 @@ const InstalledCard = ({ installData, showInstalled, setShowInstalled }) => {
             <div className="flex flex-col sm:flex-row justify-between gap-4">
               <p className="btn  text-green-700 border-0 rounded-2xl">
                 <img src={download} width={"14px"} alt="" />{" "}
-                {installData.downloads}
+                {installData.downloads} M
               </p>
               <p className="btn text-orange-400 border-0 rounded-2xl">
                 <img src={ratingImg} width={"14px"} alt="" />{" "}
