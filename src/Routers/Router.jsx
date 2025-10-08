@@ -7,8 +7,8 @@ import axios from "axios";
 import AppDetails from "../Pages/AppDetails";
 import { LoaderIcon } from "lucide-react";
 import LoadingSpinner from "../LoadingPage/LoadingSpinner";
-import NotFound from "../ErrorPage/NotFound";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import NotFound from "../ErrorPages/NotFound";
+import ErrorPage from "../ErrorPages/ErrorPage";
 
 const router = createBrowserRouter([
   {
