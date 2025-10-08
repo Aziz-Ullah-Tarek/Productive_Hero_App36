@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Container from "../Components/Container";
 import InstalledCard from "../Components/InstalledCard";
+import { ArrowBigDown } from "lucide-react";
 
 const Installation = () => {
   const [showInstalled, setShowInstalled] = useState([]);
@@ -11,6 +12,13 @@ const Installation = () => {
   }, []);
   const handleSort = (type) => {
     setSort(type);
+    if (sort === "Low - High") {
+      const sortedCard = showInstalled.sort((a, b) => b.size - a.size);
+      setShowInstalled(sortedCard);
+    } else {
+      const sortedCard = showInstalled.sort((a, b) => a.size - b.size);
+      setShowInstalled(sortedCard);
+    }
   };
   return (
     <div className="bg-gray-100  py-20 font-inter">
@@ -26,8 +34,12 @@ const Installation = () => {
             ({showInstalled.length}) Apps Found
           </h2>
           <div className="dropdown dropdown-center">
-            <div tabIndex={0} role="button" className="btn m-1">
-              {sort ? sort : "Sort by Size"}
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn m-1 rounded-xl bg-blue-800 text-white"
+            >
+              {sort ? sort : "Sort by Size"} <ArrowBigDown />
             </div>
             <ul
               tabIndex={0}
@@ -35,18 +47,18 @@ const Installation = () => {
             >
               <li>
                 <button
-                  onClick={() => handleSort("High - Low")}
-                  className="btn"
+                  onClick={() => handleSort("Low - High")}
+                  className="btn  btn-ghost"
                 >
-                  Size : High - Low
+                  Size : Low - High
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleSort("Low - High")}
-                  className="btn"
+                  onClick={() => handleSort("High - Low")}
+                  className="btn btn-ghost"
                 >
-                  Size : low - High
+                  Size : High - Low
                 </button>
               </li>
             </ul>
