@@ -24,7 +24,7 @@ const Banner = () => {
               </p>
               <div className="flex flex-col md:flex-row justify-center items-center gap-5">
                 <Link
-                  to={"https://play.google.com/store/games?hl=en&pli=1"}
+                  to={"https://play.google.com/store/apps?hl=en"}
                   target={"_blank"}
                   className="btn btn-xl rounded-xl font-bold text-gray-600 hover:scale-105 hover:bg-linear-60  hover:from-blue-800 hover:to-purple-900 hover:text-white transition duration-500 shadow-md"
                 >

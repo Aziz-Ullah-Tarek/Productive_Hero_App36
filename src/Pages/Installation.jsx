@@ -12,7 +12,7 @@ const Installation = () => {
   }, []);
   const handleSort = (type) => {
     setSort(type);
-    if (sort === "Low - High") {
+    if (type === "High - Low") {
       const sortedCard = showInstalled.sort(
         (a, b) => b.downloads - a.downloads
       );
@@ -51,18 +51,18 @@ const Installation = () => {
             >
               <li>
                 <button
-                  onClick={() => handleSort("Low - High")}
+                  onClick={() => handleSort("High - Low")}
                   className="btn  btn-ghost"
                 >
-                  Download : Low - High
+                  Download : High - Low
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleSort("High - Low")}
+                  onClick={() => handleSort("Low - High")}
                   className="btn btn-ghost"
                 >
-                  Download : High - Low
+                  Download : Low - High
                 </button>
               </li>
             </ul>
@@ -70,7 +70,7 @@ const Installation = () => {
         </div>
 
         {showInstalled.length > 0 ? (
-          <div className="space-y-6 py-13">
+          <div className="space-y-6 py-13 min-h-[calc(100dvh-724px)]">
             {showInstalled.map((installData) => (
               <InstalledCard
                 key={installData.id}
@@ -81,7 +81,7 @@ const Installation = () => {
             ))}
           </div>
         ) : (
-          <div className="h-[calc(100dvh-700px)]">
+          <div className="min-h-[calc(100dvh-700px)]">
             <h1 className="text-center py-20 text-3xl font-bold text-gray-400">
               No App Found
             </h1>
